@@ -1,9 +1,7 @@
 import React from "react";
-import {BrowserRouter } from 'react-router-dom'
 import { Grid, Button } from "@material-ui/core";
-import { SearchBar, VideoDetail, VideoList, About } from "./components";
-
-import { BrowserRouter as Router,Routes, Route } from "react-router-dom";
+import { SearchBar, VideoDetail, VideoList, Description } from "./components";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import youtube from "./api/youtube";
 class App extends React.Component {
@@ -39,30 +37,34 @@ class App extends React.Component {
     const { selectedVideo, videos } = this.state;
     return (
       <BrowserRouter>
-      <Grid justifyContent="center" container spacing={10}>
-        <Grid item xs={12}>
-          <Grid container spacing={10}>
-            <Grid item xs={8}>
-              <SearchBar onFormSubmit={this.handleSubmit} />
-            </Grid>
-            <Grid  item xs={4}>
-            <Button variant="contained" style={{width: '100%', padding: '25px', fontSize: '30px'}}>Button</Button>
-            </Grid>
-            <Grid item xs={8}>
-              <VideoDetail video={selectedVideo} />
-            </Grid>
-                <Router>
-                  <Routes>
-                    <Route path="/about" component={About}/>
-                  </Routes>
-                </Router>
-            <Grid item xs={4}>
-              <VideoList videos={videos} onVideoSelect={this.onVideoSelect} />
-              <h1>Videos watched: 17</h1>
+        <Routes>
+          <Route exact path="/" element={<VideoDetail />} /> 
+          <Route exact path="/description" element={<Description video={selectedVideo}/>} />
+        </Routes>
+        <Grid justifyContent="center" container spacing={10}>
+          <Grid item xs={12}>
+            <Grid container spacing={10}>
+              <Grid item xs={8}>
+                <SearchBar onFormSubmit={this.handleSubmit} />
+              </Grid>
+              <Grid item xs={4}>
+                <Button
+                  variant="contained"
+                  style={{ width: "100%", padding: "25px", fontSize: "30px" }}
+                >
+                  Button
+                </Button>
+              </Grid>
+              <Grid item xs={8}>
+                <VideoDetail video={selectedVideo} />
+              </Grid>
+              <Grid item xs={4}>
+                <VideoList videos={videos} onVideoSelect={this.onVideoSelect} />
+                <h1>Videos watched: 17</h1>
+              </Grid>
             </Grid>
           </Grid>
         </Grid>
-      </Grid>
       </BrowserRouter>
     );
   }
