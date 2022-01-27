@@ -1,70 +1,80 @@
-# Getting Started with Create React App
+# Bienvenidos a mi prueba técnica de React!
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Deadline
 
-## Available Scripts
+El plazo máximo para la entrega del producto es 2 semanas a partir de la presentación de la evaluación.
 
-In the project directory, you can run:
+## Requerimientos:
 
-### `npm start`
+En esta prueba desarrolle una aplicación con React que permite ver y buscar videos de Youtube así como también obtener
+información detallada de un video seleccionado.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Pantalla principal:
+### Las secciones que se deben incluir en esta pantalla son las siguientes.
 
-### `npm test`
+### Input de búsqueda
+Este elemento deberá permitir escribir texto sobre el cual será realizada la búsqueda. Al presionar “enter” al
+momento de escribir texto se deberá realizar la búsqueda de videos basados en lo escrito en el elemento en
+ese momento.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Botón para realizar la búsqueda
+Al hacer click en este botón se deberá realizar la búsqueda de videos basados en lo escrito en el input de
+búsqueda de forma similar a cuando se presiona “enter” mientras se escribe en el input.
 
-### `npm run build`
+### Video
+Esta sección será un reproductor que mostrará un video seleccionado para reproducirse. Inicialmente al no
+tener seleccionado ningún video ni haber realizado ninguna búsqueda, el implementador podrá decidir qué
+mostrar en esta sección(un vídeo, un mensaje, una imagen, etc). Al realizar una búsqueda, se deberá cargar
+uno de los videos resultantes de forma automática para ser reproducido en esta sección.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Título
+Debajo del video cargado se deberá mostrar el título del mismo.
+Botón o link para ver detalles de video
+A la derecha del título del vídeo existirá un botón o link que llevará a la pantalla de detalle del video.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Videos relacionados
+A la derecha del video se deberá mostrar como máximo 3 videos más(retornados en la búsqueda). Al hacer
+click en uno de ellos hay que cargar ese video en el reproductor principal.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Contador de videos visualizados
+Se deberá llevar el conteo de todos los videos reproducidos por el usuario de la aplicación. El contador
+puede ser persistente de modo que al recargar la aplicación se mantenga el valor o puede ser reiniciado en
+cada recarga de la aplicación.
 
-### `npm run eject`
+## Pantalla de detalle de video:
+### A continuación se muestra el layout de la pantalla de detalle de video.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Botón de back
+Al presionar este botón se debe volver a la pantalla principal de la aplicación, manteniendo el video
+reproducido anteriormente, la lista de videos relacionados y la cantidad de visualizaciones totales del
+usuario.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Título
+Texto con el título del video seleccionado.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Imagen principal
+Se debe mostrar una imagen del video.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### Detalle de video
+A la derecha de la imagen debe desplegarse la información de detalle
 
-## Learn More
+## Requerimientos no funcionales
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- La aplicación deberá verse correctamente en la última versión de Chrome y Firefox.
+- La aplicación deberá tener un diseño responsive pudiendo verse correctamente en un Iphone 6/7/8 (se
+recomienda para esto usar las herramientas de desarrollo de Chrome y Firefox). El layout para este tamaño
+de pantalla podrá ser adecuado y cambiado todo lo que sea necesario.
+- Es posible utilizar cualquier framework de UI para el diseño responsive y de componentes. En caso de
+utilizar alguno se recomienda Material UI o Bootstrap. Se aceptan soluciones sin ningún framework.
+- El ruteo de las dos pantallas involucradas en la aplicación deberán ser manejadas mediante la librería
+react-router.
+- Se recomienda utilizar alguno de los siguientes manejadores de estado, la librería redux o la api Context de
+React.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Herramientas
+- Utilizar a partir de la versión 16.3 de React.
+- Se recomienda utilizar create-react-app (https://create-react-app.dev/) para inicializar el proyecto.
+- Se deberá usar
 
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+# ¡Gracias por ver mi proyecto!
