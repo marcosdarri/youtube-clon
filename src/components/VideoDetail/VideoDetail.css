@@ -1,0 +1,15 @@
+.videoDetailGrid {
+    height: 100%;
+}
+
+.videoDetailPaper {
+    height: 600px;
+}
+
+.videoDetailPaperTwo {
+    padding: 15px;
+}
+
+.videoDetailPaperLink {
+    text-decoration: none;
+}

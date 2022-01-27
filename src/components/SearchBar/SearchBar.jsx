@@ -1,5 +1,6 @@
 import React from "react";
 import { Paper, TextField, Button, Grid } from "@material-ui/core";
+import "./SearchBar.css";
 
 class SearchBar extends React.Component {
   state = {
@@ -20,9 +21,18 @@ class SearchBar extends React.Component {
   render() {
     return (
       <React.Fragment>
-        <Grid container item xs={12} sm={12} md={12}  lg={12} xl={12}   spacing={2}>
-          <Grid container item xs={12} sm={12} md={8} lg={8} xl={8} >
-            <Paper elevation={6} style={{ padding: "25px", width: "100%"}}>
+        <Grid
+          container
+          item
+          xs={12}
+          sm={12}
+          md={12}
+          lg={12}
+          xl={12}
+          spacing={2}
+        >
+          <Grid container item xs={12} sm={12} md={8} lg={8} xl={8}>
+            <Paper elevation={6} className="searchBarPaper">
               <TextField
                 fullWidth
                 label="Search..."
@@ -30,10 +40,10 @@ class SearchBar extends React.Component {
               />
             </Paper>
           </Grid>
-          <Grid container item xs={12} sm={12} md={4} lg={4} xl={4 } >
+          <Grid container item xs={12} sm={12} md={4} lg={4} xl={4}>
             <Button
               variant="contained"
-              style={{ width: "100%", padding: "25px", fontSize: "30px" }}
+              className="searchBaButton"
               onClick={this.handleSubmit}
             >
               Button

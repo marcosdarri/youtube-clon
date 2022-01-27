@@ -1,6 +1,7 @@
 import React from "react";
 import { Button, Grid, Paper } from "@material-ui/core";
 import { Link } from "react-router-dom";
+import './Details.css'
 
 const Details = ({ video }) => {
   if (!video) return <div>Loading...</div>;
@@ -8,12 +9,12 @@ const Details = ({ video }) => {
     <React.Fragment>
       <Grid container item xs={12} sm={12} md={12} lg={12} xl={12}>
         <Grid item xs={12} sm={12} md={4} lg={4} xl={4}>
-          <Link to="/" width="100%" style={{ textDecoration: "none" }}>
+          <Link to="/" className="detailsLink" width="100%" >
             <Button variant="contained"> Go back</Button>
           </Link>
         </Grid>
       </Grid>
-      <Paper elevation={6} style={{ height: "100%" }}>
+      <Paper elevation={6} className="detailsPaperOne" >
         <h1>{video.snippet.title}</h1>
         <Grid container item xs={12} sm={12} md={12} lg={12} xl={12}>
           <Grid item xs={12} sm={12} md={8} lg={8} xl={8}>
@@ -25,7 +26,7 @@ const Details = ({ video }) => {
             />
           </Grid>
           <Grid item xs={12} sm={12} md={4} lg={4} xl={4}>
-            <Paper elevation={6} style={{ padding: "15px" }}>
+            <Paper elevation={6} className="detailsPaperTwo" >
               <h1>Detalles del video:</h1>
               <h2>Id: {video.id.videoId}</h2>
               <h2>Chanel: {video.snippet.ChannelTitle}</h2>
